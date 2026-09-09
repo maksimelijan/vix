@@ -22,7 +22,7 @@
       box-shadow: 0 15px 50px rgba(0,0,0,.5) !important;
       transform: translate3d(-50%, 0, 0) !important;
       opacity: 1 !important;
-      transition: transform .48s cubic-bezier(.22,1,.36,1), opacity .48s ease !important;
+      transition: transform .8s cubic-bezier(.16,1,.3,1), opacity .75s cubic-bezier(.16,1,.3,1) !important;
       will-change: transform, opacity !important;
     }
     .bottom-nav.nav-hidden {
