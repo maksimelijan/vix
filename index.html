@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07050d">
+  <meta name="description" content="VIX — музыкальный сервис">
+  <title>VIX — музыка для тебя</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="VIX">
+      <span class="brand-mark">V</span><span>VIX</span>
+    </a>
+    <button class="search-trigger" id="searchTrigger" aria-label="Поиск">
+      <span class="icon">⌕</span><span>Поиск</span>
+    </button>
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Уведомления">♢</button>
+      <div class="avatar">М</div>
+    </div>
+  </header>
+
+  <main class="page" id="home">
+    <section class="hero-player">
+      <div class="hero-copy">
+        <p class="eyebrow">VIX • ТВОЙ МУЗЫКАЛЬНЫЙ МИР</p>
+        <h1>Слушай то,<br><span>что чувствуешь.</span></h1>
+        <p class="hero-description">Персональные рекомендации, любимые треки и музыка, которую хочется включить прямо сейчас.</p>
+        <div class="mode-switch" role="tablist">
+          <button class="mode active" data-mode="recommendations">Рекомендации</button>
+          <button class="mode" data-mode="favorites">Любимый плейлист</button>
+        </div>
+      </div>
+      <div class="now-playing-card">
+        <div class="cover-wrap">
+          <img id="heroCover" src="https://picsum.photos/seed/vix1/700/700" alt="Обложка трека">
+          <div class="cover-shine"></div>
+          <button class="hero-play" id="heroPlay" aria-label="Воспроизвести">▶</button>
+        </div>
+        <div class="track-meta">
+          <div>
+            <p class="muted">Сейчас играет</p>
+            <h2 id="heroTitle">Midnight Pulse</h2>
+            <p id="heroArtist">VIX Selection</p>
+          </div>
+          <button class="like-btn" id="heroLike" aria-label="Добавить в любимое">♡</button>
+        </div>
+        <div class="hero-progress"><span id="heroProgress"></span></div>
+        <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="recommendedPlaylists">
+      <div class="section-heading"><div><p class="eyebrow">ДЛЯ ТЕБЯ</p><h2>Рекомендованные плейлисты</h2></div><button class="text-btn">Все →</button></div>
+      <div class="cards playlist-cards">
+        <article class="playlist-card gradient-purple" data-track="0"><div class="playlist-art">✦</div><div><h3>Ночной VIX</h3><p>Атмосферная музыка для позднего вечера</p></div><button class="mini-play">▶</button></article>
+        <article class="playlist-card gradient-violet" data-track="1"><div class="playlist-art">◈</div><div><h3>В ритме города</h3><p>Электроника, pop и немного драйва</p></div><button class="mini-play">▶</button></article>
+        <article class="playlist-card gradient-black" data-track="2"><div class="playlist-art">⌁</div><div><h3>Спокойный вайб</h3><p>Музыка, чтобы выдохнуть и расслабиться</p></div><button class="mini-play">▶</button></article>
+        <article class="playlist-card gradient-plum" data-track="3"><div class="playlist-art">∞</div><div><h3>Новые находки</h3><p>Треки, которые могут тебе понравиться</p></div><button class="mini-play">▶</button></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><div><p class="eyebrow">DISCOVER</p><h2>Исполнители</h2></div><button class="text-btn">Все →</button></div>
+      <div class="artist-row">
+        <article class="artist"><img src="https://picsum.photos/seed/artist1/240/240" alt="Исполнитель"><h3>Nova</h3><p>Поп • Электроника</p></article>
+        <article class="artist"><img src="https://picsum.photos/seed/artist2/240/240" alt="Исполнитель"><h3>Velvet</h3><p>R&B • Soul</p></article>
+        <article class="artist"><img src="https://picsum.photos/seed/artist3/240/240" alt="Исполнитель"><h3>Neon Sky</h3><p>Electronic</p></article>
+        <article class="artist"><img src="https://picsum.photos/seed/artist4/240/240" alt="Исполнитель"><h3>Artemis</h3><p>Indie • Pop</p></article>
+        <article class="artist"><img src="https://picsum.photos/seed/artist5/240/240" alt="Исполнитель"><h3>Midnight</h3><p>Alternative</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><div><p class="eyebrow">FRESH</p><h2>Треки для тебя</h2></div><button class="text-btn">Все →</button></div>
+      <div class="track-list" id="trackList"></div>
+    </section>
+
+    <section class="section charts-section">
+      <div class="section-heading"><div><p class="eyebrow">TOP VIX</p><h2>Чарты</h2></div><button class="text-btn">Смотреть все →</button></div>
+      <div class="charts-grid">
+        <article class="chart-card"><span class="chart-number">01</span><div><strong>VIX Top 100</strong><p>Главные треки недели</p></div><span>↗</span></article>
+        <article class="chart-card"><span class="chart-number">02</span><div><strong>Новые релизы</strong><p>То, что слушают прямо сейчас</p></div><span>↗</span></article>
+        <article class="chart-card"><span class="chart-number">03</span><div><strong>Казахстан</strong><p>Самые популярные треки страны</p></div><span>↗</span></article>
+        <article class="chart-card"><span class="chart-number">04</span><div><strong>Global</strong><p>Мировой музыкальный чарт</p></div><span>↗</span></article>
+      </div>
+    </section>
+  </main>
+
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-panel">
+      <button class="close-search" id="closeSearch">×</button>
+      <p class="eyebrow">ПОИСК</p><h2>Что будем слушать?</h2>
+      <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Трек, исполнитель или плейлист..."></div>
+      <div id="searchResults" class="search-results"><p class="muted">Начни вводить запрос</p></div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Основная навигация">
+    <button class="nav-item active" data-section="home"><span>⌂</span><small>Главная</small></button>
+    <button class="nav-item" data-section="playlists"><span>▤</span><small>Плейлисты</small></button>
+    <button class="nav-item" data-section="music"><span>♫</span><small>Моя музыка</small></button>
+  </nav>
+
+  <div class="player-bar">
+    <div class="bar-track"><img id="barCover" src="https://picsum.photos/seed/vix1/100/100" alt=""><div><strong id="barTitle">Midnight Pulse</strong><span id="barArtist">VIX Selection</span></div></div>
+    <div class="bar-controls"><button id="prevBtn">⏮</button><button class="bar-play" id="barPlay">▶</button><button id="nextBtn">⏭</button></div>
+    <div class="bar-extra"><span id="barTime">0:00 / 0:00</span><button id="muteBtn">◖</button></div>
+  </div>
+
+  <audio id="audio"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
