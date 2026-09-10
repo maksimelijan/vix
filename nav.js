@@ -6,8 +6,8 @@
   let lastY = window.scrollY;
   let ticking = false;
 
-  nav.style.transition = 'transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease';
-  if (player) player.style.transition = 'bottom 1.2s cubic-bezier(0.22, 1, 0.36, 1)';
+  nav.style.transition = 'transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease';
+  if (player) player.style.transition = 'bottom 0.85s cubic-bezier(0.22, 1, 0.36, 1)';
 
   const update = () => {
     const y = window.scrollY;
